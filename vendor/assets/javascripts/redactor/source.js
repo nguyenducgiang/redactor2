@@ -43,20 +43,7 @@
 			},
 			toggle: function()
 			{
-				if (this.source.$textarea.hasClass('open'))
-				{
-    				this.source.hide();
-                }
-                else
-                {
-                    this.source.show();
-                    this.source.$textarea.on('keyup.redactor-source', $.proxy(function()
-                    {
-                        var html = this.source.$textarea.val();
-                        this.core.callback('change', html);
-
-                    }, this));
-                }
+				return (this.source.$textarea.hasClass('open')) ? this.source.hide() : this.source.show();
 			},
 			setCaretOnShow: function()
 			{

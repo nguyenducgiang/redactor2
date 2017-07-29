@@ -35,25 +35,7 @@
 			},
 			toggle: function()
 			{
-				if (this.codemirror.$textarea.hasClass('open'))
-				{
-    				this.codemirror.hide();
-                }
-                else
-                {
-                    this.codemirror.show();
-                    this.codemirror.$textarea.next('.CodeMirror').on('keyup.redactor-codemirror', $.proxy(function()
-                    {
-                        var html = '';
-        				this.codemirror.$textarea.next('.CodeMirror').each(function(i, el)
-        				{
-        					html = el.CodeMirror.getValue();
-        				});
-
-                        this.core.callback('change', html);
-
-                    }, this));
-                }
+				return (this.codemirror.$textarea.hasClass('open')) ? this.codemirror.hide() : this.codemirror.show();
 			},
 			setCaretOnShow: function()
 			{
